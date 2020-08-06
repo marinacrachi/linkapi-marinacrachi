@@ -1,0 +1,25 @@
+.header { 
+    display: flex;
+    flex-direction: row;
+    height: 125px;
+}
+
+.header-logo {
+background-image: url('../../../assets/logo-verde.png');
+background-repeat: no-repeat;
+}
+
+.header-avatar {
+
+}
+
+.movie-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie {
+    width: 172px;
+    height: 255px;
+}

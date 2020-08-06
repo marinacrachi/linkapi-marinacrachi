@@ -1,0 +1,14 @@
+.movie-detail {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.movie-poster {
+    background-size: cover;
+    width: 50%;
+}
+
+.movie-description {
+    width: 50%; 
+}

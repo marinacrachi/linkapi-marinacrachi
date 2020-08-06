@@ -1,0 +1,31 @@
+<div class="container">
+
+    <div class="header">
+        Logo - Avatar
+    </div>
+
+    <div class="return">
+        Return
+    </div>
+
+    <div class="movie-detail">
+        
+        <div class="movie-description">
+            <div class="movie-title">{{movie.title}}</div>
+            <div class="movie-data">
+                <div class="movie-data-year">{{movie.year}}</div>
+                <div class="movie-data-runtime">{{movie.runtime}}</div>
+                <div class="movie-data-rated">{{movie.rated}}</div>
+            </div>
+            <div class="movie-fav">Add to favorites</div>
+            <div class="movie-plot">{{movie.plot}}</div>
+            <div class="movie-people">
+                <div class="movie-people-cast">{{movie.cast}}</div>
+                <div class="movie-people-genre">{{movie.genre}}</div>
+                <div class="movie-people-director">{{movie.director}}</div>
+            </div>
+        </div>
+
+        <div class="movie-poster" [style.background-image]="'url('+movie.poster+')'"></div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div class="header">
+        <div class="header-logo"></div>
+        <div class="header-avatar"></div>
+    </div>
+
+    <div class="search">
+        <div class="search-movie">
+            <input type="text" [(ngModel)]="search">
+        </div>
+        <div class="button-favorites" (click)="navigateFavorites()">
+            Favorites
+        </div>
+    </div>
+
+    <div class="movie-list">
+        <div *ngFor="let movie of moviesList | movies:search; let i = index">
+
+            <div (click)="movieDetail(i)" class="movie">
+                <img [src]="movie.poster" class="movie">
+            </div>
+
+        </div>
+    </div>
+</div>
