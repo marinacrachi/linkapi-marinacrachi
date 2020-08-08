@@ -17,7 +17,10 @@
                 <div class="movie-data-runtime">{{movie.runtime}}</div>
                 <div class="movie-data-rated">{{movie.rated}}</div>
             </div>
-            <div class="movie-fav">Add to favorites</div>
+
+            <div class="movie-fav" *ngIf="!isFavorite()" (click)="changeFav()">Add to favorites</div>
+            <div class="movie-fav is-favorite" *ngIf="isFavorite()" (click)="changeFav()">Favorited</div>
+
             <div class="movie-plot">{{movie.plot}}</div>
             <div class="movie-people">
                 <div class="movie-people-cast">{{movie.cast}}</div>

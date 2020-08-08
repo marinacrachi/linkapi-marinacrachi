@@ -1,16 +1,18 @@
 .header { 
     display: flex;
     flex-direction: row;
+    align-content: stretch;
     height: 125px;
 }
 
 .header-logo {
-background-image: url('../../../assets/logo-verde.png');
-background-repeat: no-repeat;
+    background-image: url('../../../assets/logo-verde.png');
+    background-repeat: no-repeat;
+    flex-grow: 1;
 }
 
 .header-avatar {
-
+    flex-grow: 1;
 }
 
 .movie-list {
@@ -23,3 +25,8 @@ background-repeat: no-repeat;
     width: 172px;
     height: 255px;
 }
+
+.is-favorite {
+    background-color: red;
+}
+

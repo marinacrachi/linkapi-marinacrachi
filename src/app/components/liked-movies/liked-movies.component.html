@@ -1,21 +1,37 @@
-<!-- <div class="container">
+<div class="container">
 
     <div class="header">
-        Logo - Avatar
+        <div class="header-logo">Logo</div>
+        <div class="header-avatar"><a routerLink="/profile">Avatar</a></div>
     </div>
 
     <div class="search">
         <div class="search-movie">
-            <input type="text">
+            <input type="text" [(ngModel)]="search" (keyup)="searchMovie()">
         </div>
-        <div class="button-list-all">
+        <div class="button-favorites" (click)="navigateall()">
             List All
         </div>
     </div>
 
-    <div class="movie-list">
-        <div *ngFor="let movie of moviesList; let i = index">
-            <div (click)="movieDetail(i)" class="movie" [style.background-image]="'url('+movie.poster+')'"></div>
+    <div class="movie-list" *ngIf="temFilme">
+
+        <div *ngFor="let movie of moviesList | movies:search; let i = index; let c = count">
+
+            <div class="movie" *ngIf="isFavorite(i)">
+
+                <div [ngClass]="{'is-favorite': isFavorite(i)}" (click)="changeFav(i)">
+                    Love
+                </div>
+
+                <img [src]="movie.poster" class="movie" (click)="movieDetail(i)">
+            </div>
+
         </div>
     </div>
-</div> -->
+
+    <div class="no-movie" *ngIf="!temFilme">
+        <app-not-found></app-not-found>
+    </div>
+    
+</div>

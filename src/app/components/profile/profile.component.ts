@@ -32,11 +32,11 @@ export class ProfileComponent implements OnInit {
 
   saveProfile() {
     this.storage.setItem('profile', this.profile) 
+    this.router.navigate([''])
     console.log(this.profile)
   }
 
   cancel() {
-    console.log('cancel')
     this.router.navigate([''])
   }
 

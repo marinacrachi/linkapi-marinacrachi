@@ -12,6 +12,8 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { MovieListComponent } from './components/movie-list/movie-list.component';
 import { LikedMoviesComponent } from './components/liked-movies/liked-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { NotFoundComponent } from './components/not-found/not-found.component'; 
+
 import { MoviesPipe } from './pipes/movies.pipe';
 
 @NgModule({
@@ -21,7 +23,8 @@ import { MoviesPipe } from './pipes/movies.pipe';
     MovieListComponent,
     LikedMoviesComponent,
     MovieDetailsComponent,
-    MoviesPipe
+    MoviesPipe,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
