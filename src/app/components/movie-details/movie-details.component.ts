@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { MoviesService } from 'src/app/services/movies.service';
 import { ActivatedRoute } from '@angular/router';
 import { StorageService } from 'src/app/services/storage.service';
@@ -10,7 +11,7 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class MovieDetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private movies: MoviesService, private storage: StorageService) { }
+  constructor(private route: ActivatedRoute, private movies: MoviesService, private storage: StorageService, private location: Location) { }
 
   movie;
   movieId;
@@ -19,8 +20,11 @@ export class MovieDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.profile = this.storage.getItem('profile')
     this.route.params.subscribe(paramsId => {
+      this.movies.getMovies().subscribe((res) => {
       this.movieId = parseInt(paramsId.movie);
-      this.movie = this.movies[this.movieId]
+      this.movie = res[this.movieId]
+    console.log(this.movie)
+      });
     })
   }
 
@@ -33,22 +37,21 @@ export class MovieDetailsComponent implements OnInit {
     }
   }
 
-  changeFav(){
-    console.log('change fav')
-    console.log(this.profile.favoritesList)
+  changeFav(){ 
 
     let index = this.profile.favoritesList.indexOf(this.movieId);
 
-    if (index > -1) {
-      console.log('achou na lista de favoritos, vai remover')
+    if (index > -1) { 
       this.profile.favoritesList.splice(index, 1);
-    } else {
-      console.log('nao achou na lista de favoritos, vai adicionar')
+    } else { 
       this.profile.favoritesList.push(this.movieId)
     }
 
-    this.storage.setItem('profile', this.profile)
-    console.log(this.profile.favoritesList)
+    this.storage.setItem('profile', this.profile) 
+  }
+
+  back() {
+    this.location.back(); 
   }
 
 }

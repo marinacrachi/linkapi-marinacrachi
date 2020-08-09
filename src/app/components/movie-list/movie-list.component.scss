@@ -1,32 +1,32 @@
-.header { 
-    display: flex;
-    flex-direction: row;
-    align-content: stretch;
-    height: 125px;
-}
-
-.header-logo {
-    background-image: url('../../../assets/logo-verde.png');
-    background-repeat: no-repeat;
-    flex-grow: 1;
-}
-
 .header-avatar {
     flex-grow: 1;
 }
 
 .movie-list {
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.search{
+    margin-top: 5%;
 }
 
 .movie {
     width: 172px;
     height: 255px;
+    padding:5px;
+}
+
+.love{
+    color:white;
+    position: relative;
+    top: 33px;
+    left: 10px;
+    width: 10px;
+    text-shadow:  2px 2px 4px #000000;
 }
 
 .is-favorite {
-    background-color: red;
+    color: red;
 }
-

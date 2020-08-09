@@ -1,8 +1,12 @@
 <div class="container">
 
     <div class="header">
-        <div class="header-logo">
-            <img src="../../../assets/logo-verde.svg"> movies
+        <div class="home">
+            <img src="../../../assets/logo-verde.svg" alt="">
+            <span>movies</span>
+        </div>
+        <div class="profile" routerLink="/profile">
+            <i class="fa fa-user"></i>
         </div>
     </div>
 
@@ -10,7 +14,7 @@
 
         <div class="profile-desc">
             <!-- <div> -->
-                It's time to create your profile and customize your experience in LinkApi Movies!
+            It's time to create your profile and customize your experience in LinkApi Movies!
             <!-- </div> -->
         </div>
 
@@ -18,28 +22,32 @@
             <div>
                 <label>
                     Name:
-                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.name" [ngModelOptions]="{standalone: true}">
+                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.name"
+                        [ngModelOptions]="{standalone: true}">
                 </label>
             </div>
 
             <div>
                 <label>
                     Age:
-                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.age" [ngModelOptions]="{standalone: true}">
+                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.age"
+                        [ngModelOptions]="{standalone: true}">
                 </label>
             </div>
 
             <div>
                 <label>
                     Favorite movie:
-                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.favoriteMovie" [ngModelOptions]="{standalone: true}">
+                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.favoriteMovie"
+                        [ngModelOptions]="{standalone: true}">
                 </label>
             </div>
 
             <div>
                 <label>
                     Favorite genre:
-                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.favoriteGenre" [ngModelOptions]="{standalone: true}">
+                    <input class="form-control border-bottom" type="text" [(ngModel)]="profile.favoriteGenre"
+                        [ngModelOptions]="{standalone: true}">
                 </label>
             </div>
 

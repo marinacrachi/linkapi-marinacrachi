@@ -1,34 +1,53 @@
 <div class="container">
 
     <div class="header">
-        Logo - Avatar
+        <div class="home">
+            <img src="../../../assets/logo-verde.svg" alt="">
+            <span>movies</span>
+        </div>
+        <div class="profile" routerLink="/profile">
+            <i class="fa fa-user"></i>
+        </div>
     </div>
 
-    <div class="return">
-        Return
+    <div class="return" routerLink="/profile">
+        <span (click)="back()">&#8592; Return</span>
     </div>
 
-    <div class="movie-detail">
-        
-        <div class="movie-description">
+    <div class="movie-detail content">
+
+        <div class="movie-description movie-info" *ngIf="movie">
             <div class="movie-title">{{movie.title}}</div>
-            <div class="movie-data">
-                <div class="movie-data-year">{{movie.year}}</div>
-                <div class="movie-data-runtime">{{movie.runtime}}</div>
-                <div class="movie-data-rated">{{movie.rated}}</div>
+            <div class="movie-data info">
+                <span class="movie-data-year fa fa-calendar">{{movie.year}}</span>
+                <span class="movie-data-runtime fa fa-clock-o">{{movie.runtime}}</span>
+                <span class="movie-data-rated rated">{{movie.rated}}</span>
             </div>
 
-            <div class="movie-fav" *ngIf="!isFavorite()" (click)="changeFav()">Add to favorites</div>
-            <div class="movie-fav is-favorite" *ngIf="isFavorite()" (click)="changeFav()">Favorited</div>
+            <div class="favorite">
+                <a>
+                    <div class="favorited" *ngIf="isFavorite()" (click)="changeFav()">
+                        <span class="fa fa-heart"></span>Favorited
+                    </div>
+                </a>
+
+                <a>
+                    <div class="add-to-favorite" *ngIf="!isFavorite()" (click)="changeFav()">
+                        <span class="fa fa-heart heart-box"></span> <span>Add to favorites</span>
+                    </div>
+                </a>
+            </div>
 
             <div class="movie-plot">{{movie.plot}}</div>
             <div class="movie-people">
-                <div class="movie-people-cast">{{movie.cast}}</div>
-                <div class="movie-people-genre">{{movie.genre}}</div>
-                <div class="movie-people-director">{{movie.director}}</div>
+                <div class="movie-people-cast">Cast: {{movie.actors}}</div>
+                <div class="movie-people-genre">Genre: {{movie.genre}}</div>
+                <div class="movie-people-director">Director: {{movie.director}}</div>
             </div>
         </div>
 
-        <div class="movie-poster" [style.background-image]="'url('+movie.poster+')'"></div>
+        <div class="image" *ngIf="movie">
+            <img [src]="movie.poster" alt="">
+        </div>
     </div>
 </div>
